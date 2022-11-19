@@ -16,13 +16,15 @@ function Layout(props) {
 
   useEffect(() => {
     async function getData() {
-      const userid=  localStorage.getItem("userId");
-      const response = await fetch(`http://localhost:4000/notes/userinNotes/${userid}`);
-      console.log(response);
+      const userid = localStorage.getItem("userId");
+      const response = await fetch(
+        `http://localhost:4000/notes/userinNotes/${userid}`
+      );
+      // console.log(response);
       const data = await response.json();
       setdata(data);
-      console.log("lets see data fetched");
-      console.log(data);
+      // console.log("lets see data fetched");
+      // console.log(data);
     }
     getData();
   }, [flag]);

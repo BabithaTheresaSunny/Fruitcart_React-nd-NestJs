@@ -47,7 +47,6 @@ async function ClickSignup()
 
         cache: "default",
       }).then(function (response) {
-        console.log("signup checking");
         console.log(response);
       });
 }

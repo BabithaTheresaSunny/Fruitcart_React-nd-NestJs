@@ -3,19 +3,19 @@ import "./add.css";
 
 function Add(props) {
   async function ItemAdd() {
-    const userid=  localStorage.getItem("userId");
+    const userid = localStorage.getItem("userId");
     if (props.showEdit === "false") {
       await fetch("http://localhost:4000/notes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ desc: props.names , userid:userid}),
+        body: JSON.stringify({ desc: props.names, userid: userid }),
 
         cache: "default",
       }).then(function (response) {
-        console.log("add checking");
-        console.log(response);
+        // console.log("add checking");
+        // console.log(response);
       });
       props.setName("");
       props.setFlag(!props.flag);

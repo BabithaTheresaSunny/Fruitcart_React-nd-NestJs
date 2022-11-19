@@ -16,8 +16,8 @@ function Signin(props) {
 
         cache: "default",
       }).then(async function (response) {
-        console.log("login checking");
-        console.log(response);
+        // console.log("login checking");
+        // console.log(response);
         const da = await response.json();
         if(da.length===0){
           alert("wrong username or password");
@@ -25,7 +25,6 @@ function Signin(props) {
         else{
           localStorage.setItem("auth", true);
           localStorage.setItem("userId", da[0].id);
-          console.log("hi i am above userid");
           console.log(da[0].id);
           navigate("/layout");
         }
